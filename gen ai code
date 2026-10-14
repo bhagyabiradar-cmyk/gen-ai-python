@@ -1,0 +1,19 @@
+
+# Day 2: AI Text Summarizer
+
+text = input("Enter a paragraph: ")
+
+words = text.split()
+word_count = len(words)
+
+print("\n--- Text Analysis ---")
+print("Original Text:", text)
+print("Total Words:", word_count)
+
+if word_count > 10:
+    summary = " ".join(words[:10])
+    print("Short Summary:", summary + "...")
+else:
+    print("Short Summary:", text)
+
+print("\nText summarization complete.")
