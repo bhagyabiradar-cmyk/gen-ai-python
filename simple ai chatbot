@@ -1,0 +1,26 @@
+# Day 3: Simple AI Chatbot
+
+print("🤖 Welcome to Python AI Chatbot!")
+print("Type 'bye' to exit.")
+
+while True:
+    user = input("You: ").lower()
+
+    if user == "bye":
+        print("AI: Goodbye! Have a great day!")
+        break
+
+    elif "hello" in user or "hi" in user:
+        print("AI: Hello! How can I help you?")
+
+    elif "your name" in user:
+        print("AI: I am your Python chatbot!")
+
+    elif "python" in user:
+        print("AI: Python is useful for AI and Gen AI!")
+
+    elif "how are you" in user:
+        print("AI: I am doing great! How about you?")
+
+    else:
+        print("AI: Sorry, I don't understand that yet.")
