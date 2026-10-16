@@ -1,0 +1,28 @@
+
+
+def chatbot(user_input):
+    responses = {
+        "hello": "Hello! How can I help you?",
+        "name": "I am your Python AI chatbot!",
+        "python": "Python is a popular programming language.",
+        "ai": "AI helps machines perform intelligent tasks.",
+        "bye": "Goodbye! Keep learning every day."
+    }
+
+    user_input = user_input.lower()
+
+    for key in responses:
+        if key in user_input:
+            return responses[key]
+
+    return "Sorry, I don't understand that yet!"
+
+print("🤖 Welcome to Mini AI Chatbot!")
+print("Type 'bye' to exit.")
+
+while True:
+    message = input("You: ")
+    if message.lower() == "bye":
+        print("Bot: Goodbye! Keep learning!")
+        break
+    print("Bot:", chatbot(message))
