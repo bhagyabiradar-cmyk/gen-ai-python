@@ -1,0 +1,22 @@
+
+import re
+
+def summarize_text(text):
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+
+    if len(sentences) <= 2:
+        return text
+
+    summary = sentences[:2]
+    return " ".join(summary)
+
+print("=== Smart Text Summarizer ===")
+
+text = input("Enter a paragraph: ")
+
+if text.strip():
+    result = summarize_text(text)
+    print("\nOriginal Text:\n", text)
+    print("\nSummary:\n", result)
+else:
+    print("Please enter some text!")
