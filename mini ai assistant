@@ -1,0 +1,29 @@
+
+
+print("🤖 Welcome to Mini AI Assistant!")
+print("Type 'exit' to stop.")
+
+while True:
+    question = input("\nYou: ").lower()
+
+    if question == "exit":
+        print("AI: Goodbye! Keep learning Gen AI!")
+        break
+
+    elif "hello" in question:
+        print("AI: Hello! How can I help you?")
+
+    elif "python" in question:
+        print("AI: Python is widely used in AI and data science.")
+
+    elif "generative ai" in question:
+        print("AI: Generative AI creates new text, images, and content.")
+
+    elif "machine learning" in question:
+        print("AI: Machine learning helps computers learn patterns from data.")
+
+    elif "motivate" in question:
+        print("AI: Keep learning! Every expert was once a beginner.")
+
+    else:
+        print("AI: I don't know that answer yet. Try another question!")
