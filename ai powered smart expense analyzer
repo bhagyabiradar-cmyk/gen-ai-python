@@ -1,0 +1,27 @@
+# Smart Expense Analyzer
+
+expenses = {
+    "Food": 1500,
+    "Travel": 800,
+    "Shopping": 2000,
+    "Education": 1200,
+    "Entertainment": 500
+}
+
+total = sum(expenses.values())
+
+print("===== SMART EXPENSE ANALYZER =====")
+
+for category, amount in expenses.items():
+    print(f"{category}: Rs. {amount}")
+
+print("\nTotal Expenses: Rs.", total)
+
+highest = max(expenses, key=expenses.get)
+
+print("Highest Spending Category:", highest)
+print("Highest Amount: Rs.", expenses[highest])
+
+average = total / len(expenses)
+
+print("Average Expense: Rs.", average)
