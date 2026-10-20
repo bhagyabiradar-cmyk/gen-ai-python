@@ -1,0 +1,26 @@
+
+# Day 5: Smart Study Assistant
+
+def study_assistant(topic):
+    suggestions = {
+        "python": "Practice loops, functions, and small projects.",
+        "sql": "Practice SELECT, WHERE, JOIN, and GROUP BY.",
+        "ai": "Learn machine learning, prompts, and neural networks.",
+        "data science": "Practice Python, Pandas, and data visualization."
+    }
+
+    topic = topic.lower().strip()
+
+    if topic in suggestions:
+        return suggestions[topic]
+    else:
+        return "Break your topic into small parts and practice daily."
+
+print("🤖 Smart Study Assistant")
+print("Topics: Python, SQL, AI, Data Science")
+
+user_topic = input("Enter your study topic: ")
+result = study_assistant(user_topic)
+
+print("\n📚 Your Study Suggestion:")
+print(result)
