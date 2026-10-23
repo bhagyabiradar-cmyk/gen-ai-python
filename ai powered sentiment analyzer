@@ -1,0 +1,45 @@
+
+# Day 7: AI-Powered Sentiment Analyzer
+
+def analyze_sentiment(text):
+    positive_words = [
+        "love", "happy", "great", "good",
+        "excellent", "awesome", "success"
+    ]
+
+    negative_words = [
+        "hate", "sad", "bad", "worst",
+        "angry", "fail", "disappointed"
+    ]
+
+    words = text.lower().split()
+
+    positive_count = sum(
+        1 for word in words if word.strip(".,!?") in positive_words
+    )
+
+    negative_count = sum(
+        1 for word in words if word.strip(".,!?") in negative_words
+    )
+
+    if positive_count > negative_count:
+        return "Positive 😊"
+    elif negative_count > positive_count:
+        return "Negative 😞"
+    else:
+        return "Neutral 😐"
+
+
+print("🤖 AI Sentiment Analyzer")
+print("Type 'exit' to stop.")
+
+while True:
+    user_text = input("\nEnter a sentence: ")
+
+    if user_text.lower() == "exit":
+        print("Thank you for using the analyzer!")
+        break
+
+    result = analyze_sentiment(user_text)
+
+    print("Sentiment:", result)
