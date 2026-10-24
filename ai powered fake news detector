@@ -1,0 +1,39 @@
+
+# Day 8: Fake News Detector
+# Project developed using Python
+
+def detect_fake_news(news):
+    suspicious_words = [
+        "shocking",
+        "secret revealed",
+        "100% guaranteed",
+        "you won't believe",
+        "share immediately",
+        "miracle cure"
+    ]
+
+    news = news.lower()
+    found_words = []
+
+    for word in suspicious_words:
+        if word in news:
+            found_words.append(word)
+
+    print("\n===== NEWS ANALYSIS =====")
+
+    if found_words:
+        print("Warning: This news contains suspicious phrases!")
+        print("Phrases detected:", ", ".join(found_words))
+        print("Please verify the information using trusted sources.")
+    else:
+        print("No suspicious phrases detected.")
+        print("This does NOT mean the news is true.")
+
+    print("========================")
+
+
+print("AI-Powered Fake News Detector")
+news = input("Enter a news headline or statement: ")
+
+detect_fake_news(news)
+
