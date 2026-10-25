@@ -1,0 +1,60 @@
+
+import re
+
+def generate_study_notes(text):
+    # Split text into sentences
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+
+    # Generate a simple summary
+    summary = " ".join(sentences[:2])
+
+    # Extract words
+    words = re.findall(r'\b[a-zA-Z]+\b', text.lower())
+
+    # Remove common words
+    stop_words = {
+        "the", "is", "a", "an", "and", "of", "to",
+        "in", "for", "are", "with", "on", "it", "as"
+    }
+
+    keywords = [
+        word for word in words
+        if word not in stop_words and len(word) > 3
+    ]
+
+    # Find the most frequent keywords
+    frequency = {}
+
+    for word in keywords:
+        frequency[word] = frequency.get(word, 0) + 1
+
+    important_words = sorted(
+        frequency,
+        key=frequency.get,
+        reverse=True
+    )[:5]
+
+    # Display the results
+    print("\n===== SMARTNOTES AI =====")
+    print("\n📝 SUMMARY:")
+    print(summary)
+
+    print("\n🔑 IMPORTANT KEYWORDS:")
+    print(", ".join(important_words))
+
+    print("\n📊 TOTAL WORDS:", len(words))
+
+    print("\n💡 KEY POINTS:")
+    for sentence in sentences[:3]:
+        print("-", sentence)
+
+
+print("Welcome to SmartNotes AI!")
+
+study_text = input("\nEnter your study notes:\n")
+
+if study_text.strip():
+    generate_study_notes(study_text)
+else:
+    print("Please enter some text.")
+
