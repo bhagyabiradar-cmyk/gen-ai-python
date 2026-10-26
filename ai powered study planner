@@ -1,0 +1,37 @@
+
+# Day 11: StudyGenius AI
+# AI-Powered Study Planner
+
+print("=" * 35)
+print("       STUDYGENIUS AI")
+print("=" * 35)
+
+subjects = {}
+
+n = int(input("How many subjects do you want to study? "))
+total_hours = float(input("Available study hours today: "))
+
+for i in range(n):
+    subject = input(f"Enter subject {i + 1}: ")
+    priority = int(input("Priority (1 = Low, 2 = Medium, 3 = High): "))
+
+    subjects[subject] = max(1, min(priority, 3))
+
+total_priority = sum(subjects.values())
+
+print("\nYOUR PERSONALIZED STUDY PLAN")
+print("-" * 35)
+
+for subject, priority in subjects.items():
+    hours = total_hours * priority / total_priority
+    print(f"{subject}: {hours:.2f} hours")
+
+print("-" * 35)
+
+if total_hours >= 4:
+    print("Suggestion: Take a short break after every study session.")
+else:
+    print("Suggestion: Focus on high-priority subjects first.")
+
+print("\nGood luck with your studies!")
+
