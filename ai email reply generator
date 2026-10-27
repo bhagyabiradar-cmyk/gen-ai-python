@@ -1,0 +1,35 @@
+
+# Project: AI Email Reply Generator
+# Day 12 - GenAI + Python
+
+def generate_email_reply():
+    print("===== AI Email Reply Generator =====")
+
+    name = input("Enter the receiver's name: ")
+    purpose = input("Enter the purpose of the email: ")
+    tone = input("Choose tone (Professional/Friendly): ")
+
+    if tone.lower() == "professional":
+        greeting = f"Dear {name},"
+        closing = "Best regards"
+    else:
+        greeting = f"Hi {name},"
+        closing = "Thank you"
+
+    reply = f"""
+{greeting}
+
+Thank you for your message regarding {purpose}.
+I appreciate you reaching out. I will review the details
+and get back to you soon.
+
+{closing},
+Your Name
+"""
+
+    print("\n===== Generated Email Reply =====")
+    print(reply)
+
+
+generate_email_reply()
+
