@@ -1,0 +1,30 @@
+
+def classify_email(email):
+    email = email.lower()
+
+    if "win money" in email or "claim your prize" in email:
+        return "Spam Email 🚨"
+
+    elif "meeting" in email or "project" in email:
+        return "Work Email 💼"
+
+    elif "birthday" in email or "how are you" in email:
+        return "Personal Email 💌"
+
+    else:
+        return "General Email 📩"
+
+
+# Test the email classifier
+emails = [
+    "You have won money! Claim your prize",
+    "We have a project meeting tomorrow",
+    "Happy birthday! How are you?",
+    "Thank you for your message"
+]
+
+for email in emails:
+    result = classify_email(email)
+    print("Email:", email)
+    print("Category:", result)
+    print("-" * 50)
