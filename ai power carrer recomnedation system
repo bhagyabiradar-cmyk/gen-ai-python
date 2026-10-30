@@ -1,0 +1,30 @@
+def career_recommendation():
+
+    print("🤖 AI Career Recommendation System")
+
+    skills = input("Enter your skills (Python, SQL, Java, HTML): ").lower()
+
+    print("\n--- Career Recommendations ---")
+
+    if "python" in skills and "sql" in skills:
+        print("Recommended Career: Data Analyst")
+        print("Learning Path: Pandas, NumPy, Power BI")
+
+    elif "python" in skills and "java" in skills:
+        print("Recommended Career: Software Developer")
+        print("Learning Path: DSA, OOP, Django")
+
+    elif "html" in skills and "java" in skills:
+        print("Recommended Career: Web Developer")
+        print("Learning Path: CSS, JavaScript, React")
+
+    elif "python" in skills:
+        print("Recommended Career: Python Developer")
+        print("Learning Path: OOP, Flask, APIs")
+
+    else:
+        print("Explore programming fundamentals first!")
+
+    print("\nThank you for using the AI Career System!")
+
+career_recommendation()
