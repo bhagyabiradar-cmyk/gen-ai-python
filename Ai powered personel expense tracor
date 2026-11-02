@@ -1,0 +1,38 @@
+print("================================")
+print("   PERSONAL EXPENSE ANALYZER")
+print("================================")
+
+expenses = {}
+
+while True:
+
+    item = input("\nEnter expense name (or done): ")
+
+    if item.lower() == "done":
+        break
+
+    amount = float(input("Enter amount: "))
+
+    expenses[item] = amount
+
+print("\n========== EXPENSE REPORT ==========")
+
+total = 0
+
+for item, amount in expenses.items():
+
+    print(item, ":", amount)
+
+    total += amount
+
+print("-----------------------------------")
+
+print("Total Expenses:", total)
+
+if total > 5000:
+    print("Warning: Your spending is high!")
+
+else:
+    print("Good! Your spending is under control.")
+
+print("===================================")
