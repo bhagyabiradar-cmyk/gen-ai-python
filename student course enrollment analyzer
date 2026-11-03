@@ -1,0 +1,19 @@
+python_students = {"Asha", "Bhagya", "Ravi", "Sneha"}
+
+sql_students = {"Bhagya", "Ravi", "Priya", "Kiran"}
+
+print("Python Students:", python_students)
+
+print("SQL Students:", sql_students)
+
+# Students enrolled in both courses
+print("Both Courses:", python_students & sql_students)
+
+# All unique students
+print("All Students:", python_students | sql_students)
+
+# Only Python students
+print("Only Python:", python_students - sql_students)
+
+# Only one of the courses
+print("Different Students:", python_students ^ sql_students)
