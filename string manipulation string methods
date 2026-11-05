@@ -1,0 +1,24 @@
+print("===== USERNAME VALIDATOR =====")
+
+username = input("Enter your username: ")
+
+# Remove extra spaces
+username = username.strip()
+
+# Convert to lowercase
+username = username.lower()
+
+# Check username length
+if len(username) >= 5:
+
+    # Check whether username contains spaces
+    if " " not in username:
+
+        print("Username:", username)
+        print("Username is valid!")
+
+    else:
+        print("Username should not contain spaces.")
+
+else:
+    print("Username must contain at least 5 characters.")
