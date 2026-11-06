@@ -1,0 +1,30 @@
+from openai import OpenAI
+
+client = OpenAI(api_key="YOUR_API_KEY")
+
+print("===== AI SQL GENERATOR =====")
+
+question = input("Enter your question: ")
+
+prompt = f"""
+You are an expert SQL developer.
+
+Convert the following English question
+into an SQL query.
+
+Explain the query in simple English.
+
+Question: {question}
+
+Assume a table named students
+with columns:
+id, name, department, marks.
+"""
+
+response = client.responses.create(
+    model="gpt-5.4-mini",
+    input=prompt
+)
+
+print("\n===== GENERATED SQL QUERY =====")
+print(response.output_text)
