@@ -1,0 +1,33 @@
+required_skills = ["python", "sql", "machine learning", "pandas", "excel"]
+
+resume = input("Enter your resume skills: ").lower()
+
+matched_skills = []
+missing_skills = []
+
+for skill in required_skills:
+
+    if skill in resume:
+        matched_skills.append(skill)
+
+    else:
+        missing_skills.append(skill)
+
+score = (len(matched_skills) / len(required_skills)) * 100
+
+print("\n===== AI RESUME ANALYZER =====")
+
+print("Matched Skills:", matched_skills)
+
+print("Missing Skills:", missing_skills)
+
+print("Resume Match Score:", score, "%")
+
+if score >= 80:
+    print("Excellent Match!")
+
+elif score >= 50:
+    print("Good Match!")
+
+else:
+    print("Needs Improvement!")
