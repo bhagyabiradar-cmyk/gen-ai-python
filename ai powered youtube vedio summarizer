@@ -1,0 +1,17 @@
+print("🤖 AI VIDEO SUMMARIZER")
+
+transcript = input("Enter your video transcript: ")
+
+# Split transcript into sentences
+sentences = transcript.split(".")
+
+# Select important sentences
+summary = sentences[:3]
+
+print("\n📌 VIDEO SUMMARY")
+
+for i, sentence in enumerate(summary, start=1):
+    if sentence.strip():
+        print(f"{i}. {sentence.strip()}")
+
+print("\nSummary generated successfully!")
