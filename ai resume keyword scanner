@@ -1,0 +1,56 @@
+
+# AI Resume Keyword Scanner
+
+print("===== AI RESUME KEYWORD SCANNER =====")
+
+# Get resume text from user
+resume = input("\nPaste your resume text: ").lower()
+
+# Important job-related keywords
+keywords = [
+    "python",
+    "sql",
+    "machine learning",
+    "data analysis",
+    "artificial intelligence",
+    "excel",
+    "pandas",
+    "numpy",
+    "power bi",
+    "data visualization",
+    "statistics",
+    "deep learning"
+]
+
+# Scan keywords
+found = []
+missing = []
+
+for word in keywords:
+    if word in resume:
+        found.append(word)
+    else:
+        missing.append(word)
+
+# Calculate score
+score = (len(found) / len(keywords)) * 100
+
+# Display results
+print("\n===== SCAN RESULTS =====")
+
+print("\nFound Keywords:")
+for word in found:
+    print("✔", word)
+
+print("\nMissing Keywords:")
+for word in missing:
+    print("✘", word)
+
+print("\nResume Keyword Score:", round(score, 2), "%")
+
+if score >= 75:
+    print("Excellent keyword coverage!")
+elif score >= 50:
+    print("Good! Add some missing skills.")
+else:
+    print("Improve your resume with relevant skills.")
