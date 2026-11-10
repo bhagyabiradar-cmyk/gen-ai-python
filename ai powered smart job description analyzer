@@ -1,0 +1,58 @@
+# Day 25: AI Job Description Analyzer
+
+print("🤖 SMART JOB ANALYZER")
+print("------------------------")
+
+# User skills
+my_skills = input("Enter your skills separated by commas: ")
+
+# Job description
+job = input("Enter job description: ")
+
+# Convert text into lowercase
+my_skills = my_skills.lower().split(",")
+job = job.lower()
+
+# Important technical skills
+required_skills = [
+    "python",
+    "sql",
+    "machine learning",
+    "excel",
+    "pandas",
+    "numpy",
+    "data analysis",
+    "power bi"
+]
+
+# Find matching skills
+matched = []
+missing = []
+
+for skill in required_skills:
+    if skill in job:
+        if skill in my_skills:
+            matched.append(skill)
+        else:
+            missing.append(skill)
+
+# Calculate score
+if len(required_skills) > 0:
+    score = (len(matched) / len(required_skills)) * 100
+else:
+    score = 0
+
+# Display results
+print("\n📊 ANALYSIS RESULTS")
+
+print("Matched Skills:", matched)
+print("Missing Skills:", missing)
+
+print("Skill Match Score:", round(score, 2), "%")
+
+if score >= 70:
+    print("Excellent! You have a good skill match.")
+elif score >= 40:
+    print("Good! Improve some technical skills.")
+else:
+    print("Keep learning and improving!")
