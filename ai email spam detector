@@ -1,0 +1,28 @@
+print("===== AI EMAIL SPAM DETECTOR =====")
+
+spam_words = [
+    "win", "free", "prize", "lottery",
+    "offer", "urgent", "claim", "money",
+    "click", "reward"
+]
+
+email = input("Enter your email message: ").lower()
+
+words = email.split()
+
+spam_count = 0
+
+for word in words:
+
+    if word in spam_words:
+        spam_count += 1
+
+print("\n===== EMAIL ANALYSIS =====")
+
+print("Suspicious words found:", spam_count)
+
+if spam_count >= 2:
+    print("Result: SPAM EMAIL 🚨")
+
+else:
+    print("Result: NOT SPAM ✅")
