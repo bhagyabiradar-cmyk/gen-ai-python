@@ -1,0 +1,39 @@
+comments = [
+    "This video is amazing",
+    "Very bad explanation",
+    "Nice work",
+    "I love this tutorial",
+    "Not useful",
+    "Good content"
+]
+
+positive_words = ["amazing", "nice", "love", "good", "excellent"]
+negative_words = ["bad", "hate", "poor", "useless"]
+
+positive = 0
+negative = 0
+neutral = 0
+
+for comment in comments:
+
+    text = comment.lower()
+
+    if any(word in text for word in positive_words):
+        positive += 1
+
+    elif any(word in text for word in negative_words):
+        negative += 1
+
+    else:
+        neutral += 1
+
+print("YOUTUBE COMMENT ANALYSIS")
+print("-------------------------")
+
+print("Total Comments:", len(comments))
+print("Positive Comments:", positive)
+print("Negative Comments:", negative)
+print("Neutral Comments:", neutral)
+
+print("\nPositive Feedback:", positive / len(comments) * 100, "%")
+print("Negative Feedback:", negative / len(comments) * 100, "%")
