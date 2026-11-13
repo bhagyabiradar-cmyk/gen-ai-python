@@ -1,0 +1,29 @@
+# Day 26 - Career Skill Matcher
+
+my_skills = ["python", "sql", "excel", "machine learning"]
+
+job_roles = {
+    "Data Analyst": ["python", "sql", "excel", "power bi"],
+    "Data Scientist": ["python", "sql", "machine learning", "statistics"],
+    "AI Engineer": ["python", "machine learning", "deep learning"],
+    "Web Developer": ["html", "css", "javascript"]
+}
+
+print("===== CAREER SKILL MATCHER =====")
+
+for role, skills in job_roles.items():
+
+    matched = set(my_skills) & set(skills)
+
+    percentage = (len(matched) / len(skills)) * 100
+
+    print("\nJob Role:", role)
+    print("Matched Skills:", matched)
+    print("Skill Match:", round(percentage, 2), "%")
+
+    if percentage >= 75:
+        print("Recommendation: Strong Match")
+    elif percentage >= 40:
+        print("Recommendation: Good Match")
+    else:
+        print("Recommendation: Need More Learning")
