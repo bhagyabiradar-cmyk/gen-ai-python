@@ -1,0 +1,65 @@
+print("===== INSTAGRAM AI COMMENT ANALYZER =====")
+
+comments = []
+
+positive_words = [
+    "beautiful", "love", "awesome",
+    "cute", "super", "amazing",
+    "excellent", "nice", "great"
+]
+
+negative_words = [
+    "bad", "worst", "ugly",
+    "hate", "boring", "stupid"
+]
+
+abusive_words = [
+    "idiot", "fool", "useless"
+]
+
+print("Enter Instagram comments.")
+print("Type 'stop' to finish.\n")
+
+while True:
+
+    comment = input("Enter comment: ").lower()
+
+    if comment == "stop":
+        break
+
+    comments.append(comment)
+
+print("\n===== AI ANALYSIS REPORT =====")
+
+positive = 0
+negative = 0
+neutral = 0
+abusive = 0
+
+for comment in comments:
+
+    if any(word in comment.split() for word in abusive_words):
+        abusive += 1
+        print(comment, "-> Potentially Abusive ⚠️")
+
+    elif any(word in comment.split() for word in positive_words):
+        positive += 1
+        print(comment, "-> Positive 😊")
+
+    elif any(word in comment.split() for word in negative_words):
+        negative += 1
+        print(comment, "-> Negative 😡")
+
+    else:
+        neutral += 1
+        print(comment, "-> Neutral 😐")
+
+print("\n===== FINAL REPORT =====")
+
+print("Total Comments:", len(comments))
+print("Positive:", positive)
+print("Negative:", negative)
+print("Neutral:", neutral)
+print("Potentially Abusive:", abusive)
+
+print("========================")
